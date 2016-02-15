@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .models import Post
 
 def startup(request):
-    return HttpResponse("<h1>THIS IS THE STARUP PAGE</h1>"
+    return HttpResponse("<h1>THIS IS THE STARTUP PAGE</h1>"
                         "<a href='http://127.0.0.1:8000/posts/'>Go to POSTS</a>")
 def post_home(request):
     context = {

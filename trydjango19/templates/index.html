@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Svilar Davor webb page page</title>
-</head>
+22 lines (15 sloc)  329 Bytes
+<!--DOCTYPE html -->
+<html>
+
+
 <body>
-    <h1>THIS TEMPLATE IS WORKING !!!</h1>
-    <h1>{{ title }} IS WORKING !!!</h1>
-</br>
-<strong>{{ object_list }}</strong>
+<h1>{{ title }} is working!</h1>
 
 {% for obj in object_list %}
-</br>
-<strong>{{ obj.title }}</br></strong>
-{{ obj.content }}</br>
-{{ obj.timestamp }}</br>
-{{ obj.updated }}</br>
-{{ obj.id }}</br>
-</br>
+
+{% url "posts:detail" id=obj.id %}
+<a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/>
+{{ obj.id }}<br/>
+{{ obj.timestamp }}<br/>
+{{ obj.updated }}<br/>
+{{ obj.content }}<br/>
+
 
 {% endfor %}
 
+
 </body>
+
 </html>
