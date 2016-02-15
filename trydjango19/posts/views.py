@@ -15,7 +15,7 @@ def post_detail(request):
     return HttpResponse("<h1>HELLO DETAIL</h1>")
 
 def post_list(request):
-    return HttpResponse("<h1>HELLO LIST</h1>")
+    return render(request, 'index.html', {})
 
 def post_update(request):
     return HttpResponse("<h1>HELLO UPDATE</h1>")
