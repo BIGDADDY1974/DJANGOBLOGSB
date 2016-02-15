@@ -1,7 +1,8 @@
-from django.shortcuts import render,get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render,get_object_or_404,redirect
+from django.http import HttpResponse,HttpResponseRedirect
 from .models import Post
 from .forms import PostForm
+from django.contrib import messages
 
 def startup(request):
     return HttpResponse("<h1>THIS IS THE STARTUP PAGE</h1>"
@@ -43,21 +44,38 @@ def post_create(request):
         instance = form.save(commit=False)
         print (form.cleaned_data.get("title"))
         instance.save()
-
+        messages.success(request,"Sucsesfully Created")
+        return HttpResponseRedirect(instance.get_absolute_url())
+    else:
+        messages.error(request,"NOT Sucsesfully Created")
     # if request.method == "POST":
     #     print (request.POST.get("content"))
     #     print (request.POST.get("title"))
     # Post.objects.create(title=title)
     # Post.objects.create(content=content)
-
     context = {
-       "form":form,
+         "form":form,
+        }
+    return render(request, 'post_form.html', context)
+
+def post_update(request, id=None):
+    instance = get_object_or_404(Post,id=id)
+    form = PostForm(request.POST or None, instance=instance)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        messages.success(request, "<a href='#'>Item</a> Saved", extra_tags='html_safe')
+        return HttpResponseRedirect(instance.get_absolute_url())
+    context = {
+        "title":instance.title,
+        "instance":instance,
+        "form":form,
     }
     return render(request, 'post_form.html', context)
 
-def post_update(request):
-    return HttpResponse("<h1>HELLO UPDATE</h1>")
-
-def post_delete(request):
-    return HttpResponse("<h1>HELLO DELETE</h1>")
+def post_delete(request, id=None):
+    instance = get_object_or_404(Post, id=id)
+    instance.delete()
+    messages.success(request, "Successfully deleted")
+    return redirect("posts:list")
 
