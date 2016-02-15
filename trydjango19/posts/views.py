@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse
 from .models import Post
+from .forms import PostForm
 
 def startup(request):
     return HttpResponse("<h1>THIS IS THE STARTUP PAGE</h1>"
@@ -37,10 +38,22 @@ def post_detail(request,id=None):
     return render(request, 'post_detail.html', context)
 
 def post_create(request):
+    form = PostForm(request.POST)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        print (form.cleaned_data.get("title"))
+        instance.save()
+
+    # if request.method == "POST":
+    #     print (request.POST.get("content"))
+    #     print (request.POST.get("title"))
+    # Post.objects.create(title=title)
+    # Post.objects.create(content=content)
+
     context = {
-       "title":"Create"
+       "form":form,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'post_form.html', context)
 
 def post_update(request):
     return HttpResponse("<h1>HELLO UPDATE</h1>")

@@ -8,9 +8,9 @@
 
 {% for obj in object_list %}
 
-{% url "posts:detail" id=obj.id %}
-<a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/>
-{{ obj.id }}<br/>
+<!--{% url "posts:detail" id=obj.id %}-->
+<strong><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/></strong>
+<strong>{{ obj.id }}<br/></strong>
 {{ obj.timestamp }}<br/>
 {{ obj.updated }}<br/>
 {{ obj.content }}<br/>
