@@ -34,8 +34,18 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trydjango19/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32419547">
-              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.30393326">
+              <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post_detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trydjango19/templates/post_detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.5384617">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -57,9 +67,9 @@
         <entry file="file://$PROJECT_DIR$/trydjango19/posts/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,8 +127,9 @@
         <option value="$PROJECT_DIR$/trydjango19/trydjango19/urls.py" />
         <option value="$PROJECT_DIR$/trydjango19/trydjango19/settings.py" />
         <option value="$PROJECT_DIR$/trydjango19/posts/urls.py" />
-        <option value="$PROJECT_DIR$/trydjango19/posts/views.py" />
         <option value="$PROJECT_DIR$/trydjango19/templates/index.html" />
+        <option value="$PROJECT_DIR$/trydjango19/posts/views.py" />
+        <option value="$PROJECT_DIR$/trydjango19/templates/post_detail.html" />
       </list>
     </option>
   </component>
@@ -429,14 +440,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trydjango19/trydjango19/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/trydjango19/posts/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -483,20 +486,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trydjango19/trydjango19/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="54" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/trydjango19/posts/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trydjango19/templates/post_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trydjango19/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32419547">
-          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.30393326">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
           <folding />
         </state>
       </provider>
