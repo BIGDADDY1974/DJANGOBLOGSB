@@ -7,5 +7,19 @@
 <body>
     <h1>THIS TEMPLATE IS WORKING !!!</h1>
     <h1>{{ title }} IS WORKING !!!</h1>
+</br>
+<strong>{{ object_list }}</strong>
+
+{% for obj in object_list %}
+</br>
+<strong>{{ obj.title }}</br></strong>
+{{ obj.content }}</br>
+{{ obj.timestamp }}</br>
+{{ obj.updated }}</br>
+{{ obj.id }}</br>
+</br>
+
+{% endfor %}
+
 </body>
 </html>

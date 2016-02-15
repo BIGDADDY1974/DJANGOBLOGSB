@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-# Create your views here.
+from .models import Post
 
 def startup(request):
     return HttpResponse("<h1>THIS IS THE STARUP PAGE</h1>"
@@ -12,14 +12,19 @@ def post_home(request):
     return render(request, 'index.html', context)
 
 def post_list(request):
-    if request.user.is_authenticated():
-        context = {
-       "title":"USER AUTHENTICATED"
+    queryset = Post.objects.all()
+    context = {
+        "object_list":queryset,
+        "title":"List"
     }
-    else:
-        context = {
-       "title":"USER NOT AUTHENTICATED"
-    }
+    # if request.user.is_authenticated():
+    #     context = {
+    #    "title":"USER AUTHENTICATED"
+    # }
+    # else:
+    #     context = {
+    #    "title":"USER NOT AUTHENTICATED"
+    # }
     return render(request, 'index.html', context)
 
 def post_create(request):
