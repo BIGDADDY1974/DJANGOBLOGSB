@@ -27,12 +27,13 @@ def post_list(request):
     # }
     return render(request, 'index.html', context)
 
-def post_detail(request):
+def post_detail(request,id=None):
     # instance = Post.objects.get(id=3)
-    instance = get_object_or_404(Post,id=1)
+    instance = get_object_or_404(Post,id=id)
     context = {
         "title":instance.title,
-        "instance":(instance)}
+        "instance":instance
+    }
     return render(request, 'post_detail.html', context)
 
 def post_create(request):
