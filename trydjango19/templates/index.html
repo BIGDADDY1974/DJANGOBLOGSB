@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SASA BRDAR BLOG</title>
+    <title>Saša Brdar Blog</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -32,20 +32,223 @@
     <![endif]-->
 
 </head>
-<h1>{{ title }} is working!</h1>
 
-{% for obj in object_list %}
+<body id="page-top" class="index">
 
-<!--{% url "posts:detail" id=obj.id %}-->
-<strong><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/></strong>
-<strong>{{ obj.id }}<br/></strong>
-{{ obj.timestamp }}<br/>
-{{ obj.updated }}<br/>
-{{ obj.content }}<br/>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Saša Brdar Blog</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Čitaj moj BLOG</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">O meni</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#footer">Kontakt</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Drago mi je da smo se upoznali...</div>
+                <div class="intro-heading">...Dobrodošli na moj BLOG</div>
+                <a href="#services" class="page-scroll btn btn-xl">Kreni sa čitanjem BLOGA</a>
+            </div>
+        </div>
+    </header>
+    </br>
+    </br>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="modal-body">
+            <center><img src="/static/brdar2.jpg" class="img-round"></center>
+            <hr class="star-light">
+    {% for obj in object_list %}
+    <!--{% url "posts:detail" id=obj.id %}-->
+    <CENTER><h1><a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a></h1>
+    <h5>Kreiran {{ obj.timestamp }}, poslednji put izmenjen {{ obj.updated }}</h5><br/></CENTER>
+            <hr class="star-light">
+        <div class="col-lg-12 text-left">
+            <p>{{ obj.content }}</p><br/>
+            <hr class="star-light">
+        </div>
+    {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                       <img src="/static/brdar3.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="/static/brdar4.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="/static/brdar5.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="/static/brdar6.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                       <img src="/static/brdar7.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="/static/brdar8.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="/static/brdar9.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="/static/brdar10.jpg" alt="Smiley face"  class="img-rounded">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+        <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+		    <center><img src="/static/brdar1.jpg" alt="Smiley face" height="200" width="200" class="img-circle"></center>
+                    <h2>O Saši Brdar</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Moje ime je Saša Brdar i ja sam veliki ljubitelj prirode, roker i strastveni bajker, poštovalac i praktičar borilackih vestina, pisac - pesnik amater, slikar, reiki praktičar i terapeut ,maser-kiropraktičar,...</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Ja sam neko ko traži smisao postojanja nas ljudi, ko analizira nas uticaj na planetu, naše medjuljudske odnose, i duhovnost i put ka spoznaji Boga.....</p>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="https://www.facebook.com/salebrdar?fref=ts" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> POSETITE MOJU FACEBOOK STRANICU
+                    </a>
+                    <hr class="star-light">
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <section class="footer" id="footer">
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Mesto stanovanja</h3>
+                        <p>Vidikovački Venac 75, 11000 Beograd, Republika Srbija.</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>O autoru više info na Facebook</h3>
+                        <a href="https://www.facebook.com/salebrdar?fref=ts" class="btn btn-lg btn-outline">
+                        <i class="fa fa-download"></i> POSETITE MOJU FACEBOOK STRANICU
+                        </a>
+                        <li><strong>Email:</strong><a href="mailto:sasabrdar@gmail.com"><strong>  sasabrdar@gmail.com</strong></a></li>
+                        <li><strong>Mobile: +381646825522 </strong></a></li>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>O ovom sajtu</h3>
+                        <p>Ovo je mali BLOG sajt o mislima Saše Brdar-a kreiran isključivo kao socialno društveni sajt dostupan svima!!!</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-{% endfor %}
+            <div class="footer-below">
+                <div class="container">
+                    <div class="row">
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+                        <div class="col-lg-12"><strong>
+                            Copyright &copy; BIGDADDY Website 2015
+                        </strong></div>
+                    </div>
+                </div>
+            </div>
+    </footer>
 
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="/static/js/classie.js"></script>
+    <script src="/static/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/static/js/jqBootstrapValidation.js"></script>
+    <script src="/static/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/static/js/agency.js"></script>
 
 </body>
 

@@ -5,8 +5,10 @@ from .forms import PostForm
 from django.contrib import messages
 
 def startup(request):
-    return HttpResponse("<h1>THIS IS THE STARTUP PAGE</h1>"
-                        "<a href='http://127.0.0.1:8000/posts/'>Go to POSTS</a>")
+    context = {
+       "title":"BLOG"
+    }
+    return render(request, 'main.html', context)
 def post_home(request):
     context = {
        "title":"HOME"
