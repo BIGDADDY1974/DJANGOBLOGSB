@@ -50,16 +50,14 @@
                             <!-- Project Details Go Here -->
                             <h1><strong>{{ instance.title }}</strong></h1><br/>
                             <p class="item-intro text-muted">{{ instance.timestamp }}</p>
-                            <img class="img-responsive img-centered" src="img/portfolio/dreams-preview.png" alt="">
                             </br>
                             <p>{{ instance.content }}</p>
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Vrati se na BLOG</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="/posts"><i class="fa fa-times"></i> Vrati se na BLOG</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
 
 
 <body>
@@ -72,11 +70,21 @@
 </ul>
 {% endif %}
 
+<div class='col-sm-6 col-sm-offset-3'>
+    {% if instance.image %}
+    <img src='{{ instance.image.url }}' class='img-responsive' />
+    {% endif %}
+<h1>{{ title }} <small>{{ instance.timestamp }}</small></h1>
+
+{{ instance.content|linebreaks }}<br/>
+</div>
+
 <!--<strong>{{ instance.title }}</strong><br/>-->
 <!--{{ instance.content }}<br/>-->
 <!--{{ instance.timestamp }}<br/>-->
 <!--{{ instance.updated }}<br/>-->
 <!--{{ instance.id }}<br/>-->
+
 
 
 </body>

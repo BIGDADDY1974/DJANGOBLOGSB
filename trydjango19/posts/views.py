@@ -41,39 +41,33 @@ def post_detail(request,id=None):
     return render(request, 'post_detail.html', context)
 
 def post_create(request):
-    form = PostForm(request.POST)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        print (form.cleaned_data.get("title"))
-        instance.save()
-        messages.success(request,"Sucsesfully Created")
-        return HttpResponseRedirect(instance.get_absolute_url())
-    else:
-        messages.error(request,"NOT Sucsesfully Created")
-    # if request.method == "POST":
-    #     print (request.POST.get("content"))
-    #     print (request.POST.get("title"))
-    # Post.objects.create(title=title)
-    # Post.objects.create(content=content)
-    context = {
-         "form":form,
-        }
-    return render(request, 'post_form.html', context)
-
-def post_update(request, id=None):
-    instance = get_object_or_404(Post,id=id)
-    form = PostForm(request.POST or None, instance=instance)
+    form = PostForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         instance = form.save(commit=False)
         instance.save()
-        messages.success(request, "<a href='#'>Item</a> Saved", extra_tags='html_safe')
+        # message success
+        messages.success(request, "Successfully Created")
         return HttpResponseRedirect(instance.get_absolute_url())
     context = {
-        "title":instance.title,
-        "instance":instance,
-        "form":form,
+        "form": form,
     }
-    return render(request, 'post_form.html', context)
+    return render(request, "post_form.html", context)
+
+def post_update(request,id=None):
+        instance = get_object_or_404(Post, id=id)
+        form = PostForm(request.POST or None, request.FILES or None, instance=instance)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.save()
+            messages.success(request, "<a href='#'>Item</a> Saved", extra_tags='html_safe')
+            return HttpResponseRedirect(instance.get_absolute_url())
+
+        context = {
+                "title": instance.title,
+                "instance": instance,
+                "form":form,
+        }
+        return render(request, "post_form.html", context)
 
 def post_delete(request, id=None):
     instance = get_object_or_404(Post, id=id)
